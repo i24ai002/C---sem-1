@@ -1,25 +1,23 @@
 #include<stdio.h>
-int main()
+int fib(int n);
+void main()
 {
     int n;
-    printf("enter a number of term: ");
+    printf("enter number of terms");
     scanf("%d",&n);
-    printf("%d", fib(n));
-    return 0;
+    fib(n);  
 }
 
 int fib(int n)
-{ 
-    if(n==0)
+{
+    int a=0,b=1,next;
+    printf("%d\t",a);
+    printf("%d\t",b);
+    for(int i=2;i<=n;i++)
     {
-        return 0;
+        next=a+b;
+        printf("%d\t",next);
+        a=b;
+        b=next;
     }
-    if(n==1)
-    {
-        return 1;
-    }
-    int fibNm1 = fib(n-1);
-    int fibNm2 = fib(n-2);
-    int fibN = fibNm1 + fibNm2;
-    return fibN;
 }
